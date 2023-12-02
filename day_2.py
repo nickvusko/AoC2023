@@ -36,8 +36,8 @@ def day_2_1():
                  "green": 0
                  }
         for draw in [x for x in re.split(";", games[game]) if x]:
-            for round in [x for x in re.split(",", draw) if x]:
-                value, key = round.strip().split(" ")
+            for game_round in [x for x in re.split(",", draw) if x]:
+                value, key = game_round.strip().split(" ")
                 cubes[key] = int(value) if int(value) > cubes[key] else cubes[key]
         id_sum += (int(cubes["blue"]) * int(cubes["green"]) * int(cubes["red"]))
     return id_sum
