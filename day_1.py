@@ -16,7 +16,7 @@ def day_1_0():
 
 
 def day_1_1():
-    """Solve first task"""
+    """Solve second task"""
     lines = helper.parse_input("source")
     nmrs = []
     for line in lines:
