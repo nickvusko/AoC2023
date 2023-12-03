@@ -1,14 +1,15 @@
 """Helper functions"""
-import re
+import numpy as np
 
 
-def parse_input(fh: str) -> list:
+def parse_input(fh: str, strip_lines: bool = True) -> list:
     """Load and parse source file
 
     :param fh: name of parsed file without extension
+    :param strip_lines: False if lines should be preserved
     """
     with open(f"{fh}.txt") as f:
-        lines = [x.strip("\n") for x in f.readlines()]
+        lines = [x.strip("\n") for x in f.readlines()] if strip_lines else [[x.strip("\n")] for x in f.readlines()]
     return lines
 
 
